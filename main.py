@@ -132,7 +132,7 @@ def processar_conta(ad_account_id):
             model.fit(df_prophet)
 
             # Fazer previsões para os próximos 30 dias (Make predictions for the next 30 days)
-            future = model.make_future_dataframe(periods=30)
+            future = model.make_future_dataframe(periods=7)
             forecast = model.predict(future)
 
             # Exibir a previsão para verificação (Display forecast for verification)
