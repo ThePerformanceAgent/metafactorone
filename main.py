@@ -35,17 +35,17 @@ def ajustar_budget(cpl_previsto, cpl_real, adset_id, current_budget):
     # Caso 1: Se o CPL previsto é maior que o CPL real, devemos reduzir o orçamento (Case 1: If predicted CPL is greater than real CPL, reduce budget)
     if cpl_previsto > cpl_real:
         new_budget = current_budget * 0.9  # Reduzir o orçamento em 10% (Reduce budget by 10%)
-        action = "Reduzir" (Reduce)
+        action = "Reduzir"  # Reduce
 
     # Caso 2: Se o CPL previsto é menor que o CPL real e está abaixo do limite, podemos aumentar o orçamento (Case 2: If predicted CPL is less than real CPL and below limit, increase budget)
     elif cpl_previsto < cpl_real and cpl_previsto < limite_cpl:
         new_budget = current_budget * 1.1  # Aumentar o orçamento em 10% (Increase budget by 10%)
-        action = "Aumentar" (Increase)
+        action = "Aumentar"  # Increase
 
     # Caso 3: Se o CPL previsto está dentro do limite aceitável e estável, manter o orçamento (Case 3: If predicted CPL is within acceptable limit and stable, maintain budget)
     else:
         new_budget = current_budget
-        action = "Manter" (Maintain)
+        action = "Manter"  # Maintain
 
     # Garantir que o orçamento não seja menor que o valor mínimo e não ultrapasse o valor máximo (Ensure budget is not less than minimum and does not exceed maximum)
     if new_budget < min_budget:
@@ -175,7 +175,7 @@ def processar_conta(ad_account_id):
             plt.show()  # Exibir o gráfico (Display graph)
 
     except Exception as e:
-        print(f"Erro ao acessar a API do Meta Ads para a conta {ad_account_id}: {e}")
+        print(f"Erro ao acessar a API do Meta Ads para a conta {ad_account_id}: Erro: {e}")  # Improved error message, printing the exception 'e'
 
 
 # Processar todas as contas de anúncio (Process all ad accounts)
