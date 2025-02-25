@@ -1,0 +1,5 @@
+prophet
+matplotlib
+facebook_business
+requests
+pandas
